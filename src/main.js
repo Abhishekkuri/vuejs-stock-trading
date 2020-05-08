@@ -1,14 +1,15 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 
-import App from './App.vue'
+import App from './App.vue';
 import { routes } from './routes';
 import store from './store/store';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
+// I removed my url from here
 Vue.http.options.root = 'https://vuejs-stock-trader.firebaseio.com/';
 
 Vue.filter('currency', (value) => {
@@ -24,5 +25,5 @@ new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App)
-})
+  render: (h) => h(App)
+});
